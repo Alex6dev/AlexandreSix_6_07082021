@@ -1,0 +1,131 @@
+h1 {
+  font-size: 2.5rem;
+  font-family: "DM Sans";
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-family: "DM Sans";
+}
+
+p {
+  font-family: "DM Sans";
+}
+
+#boxHeader {
+  margin: 4rem 0 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#lienRetour {
+  width: 20%;
+}
+
+#logo {
+  width: 100%;
+}
+
+::marker {
+  color: white;
+}
+
+#liste {
+  width: 40rem;
+  text-align: center;
+}
+
+.tags {
+  font-family: "DM sans";
+  color: #901C1C;
+  background: white;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 11px;
+}
+.tags:hover {
+  background: #901C1C;
+  color: white;
+}
+.tags:active {
+  background: #D3573C;
+  color: white;
+}
+
+main {
+  position: relative;
+}
+
+#titreNosPhotographes {
+  color: #901C1C;
+  margin: 0;
+  position: absolute;
+  left: 60rem;
+  right: 0rem;
+  top: -5rem;
+  bottom: 0rem;
+}
+
+#navRetourPhotographers {
+  width: 30rem;
+  position: fixed;
+  left: 35rem;
+}
+
+#btnRetourPhotographers {
+  padding: 1rem;
+  font-family: "DM sans";
+  color: #901C1C;
+  background: white;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 2rem;
+  text-decoration: none;
+}
+
+#boxVignette {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.boxArtiste {
+  margin: 5rem 0 0 0;
+  width: 30%;
+  text-align: center;
+}
+
+.imgId {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10rem;
+  object-fit: cover;
+}
+
+.namePhotographer {
+  color: #D3573C;
+  margin: 1rem 0 0 0;
+}
+
+.cityPhotographer {
+  color: #D3573C;
+}
+
+.pricePhotographer {
+  color: #757575;
+}
+
+.bleu {
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+
+.rouge {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+/*# sourceMappingURL=style.css.map */

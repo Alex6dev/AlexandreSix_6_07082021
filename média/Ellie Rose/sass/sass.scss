@@ -1,0 +1,25 @@
+
+$clrPrimaire: #D3573C;
+$clrSecondaire: #901C1C;
+$clrBackground: #E5E5E5;
+$clrNeutre: white;
+$clrFonce: black;
+$font:"DM Sans";
+@mixin buttonTags {
+    font-family: "DM sans";
+    color: $clrSecondaire;
+    background: white;
+    border: 0.5px solid #C4C4C4 ;
+    border-radius: 11px;
+}
+h1{
+    font-size: 2.5rem;
+    font-family: $font;
+}
+h2{
+    font-size: 2.5rem;
+    font-family: $font;
+}
+p{
+    font-family: $font;
+}
