@@ -1,0 +1,129 @@
+body {
+  padding: 2rem;
+}
+
+a {
+  font-family: "DM sans";
+}
+
+li {
+  font-family: "DM sans";
+}
+
+h1 {
+  font-family: "DM sans";
+  margin: 0;
+}
+
+p {
+  font-family: "DM sans";
+}
+
+figcaption {
+  color: #901C1C;
+  font-family: "DM sans";
+  margin: 0.5rem;
+}
+
+#logo {
+  width: 20%;
+}
+
+#vignettePhotographer {
+  background-color: rgba(172, 172, 172, 0.123);
+  padding: 3rem 2rem 3rem 2rem;
+  border-radius: 1rem;
+}
+
+#boxPhotographer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+}
+
+#box {
+  width: 35%;
+}
+
+.namePhotographer {
+  color: #D3573C;
+}
+
+.cityPhotographer {
+  color: #901C1C;
+}
+
+.quotePhotographer {
+  color: #919191;
+}
+
+.tags {
+  font-family: "DM sans";
+  color: #901C1C;
+  background: white;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 11px;
+}
+.tags:hover {
+  background: #901C1C;
+  color: white;
+}
+.tags:active {
+  background: #D3573C;
+  color: white;
+}
+
+#btnContactezMoi {
+  width: 8rem;
+  height: 3rem;
+  color: #E5E5E5;
+  background-color: #901C1C;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.imgId {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 7rem;
+  margin-left: 40%;
+}
+
+.pricePhotographer {
+  position: fixed;
+  left: 70rem;
+  bottom: 0;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.boxMedia {
+  width: 27%;
+  margin: 1rem;
+}
+
+.vignetteMedia {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+}
+
+.boxlegend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mediaCoeur {
+  color: #901C1C;
+  margin: 0.5rem;
+}
+
+/*# sourceMappingURL=pagesstyle.css.map */

@@ -12,6 +12,12 @@ $font:"DM Sans";
     border: 0.5px solid #C4C4C4 ;
     border-radius: 11px;
 }
+@mixin mobile-only {
+    @media screen and (max-width:599px){
+        @content;
+    }
+}
+
 h1{
     font-size: 2.5rem;
     font-family: $font;
@@ -27,25 +33,50 @@ p{
     margin: 4rem 0 0 0;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    width: 74%;
+    @include mobile-only{
+        width: 100%;  
+        flex-wrap: wrap; 
+    }
+}
+a{
+    font-family: $font;
+    text-decoration: none;
 }
 #lienRetour{
     width: 20%;
+    @include mobile-only{
+        width: 50%;
+    }
 }
 #logo{
     width: 100%;
+    
 }
 #navigationTags{
-}
-::marker{
-    color: $clrNeutre;
+    min-width: 20%;
+    margin-left: 6rem;
+    @include mobile-only{
+        min-width: 70%;
+        margin-left: 0;
+    }
 }
 #liste{
-    
+    list-style-type: none;
     width: 40rem;
-    text-align: center;
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include mobile-only{
+        width: 100%;
+    }
 }
+.btn{
+    margin: 3px
+}
+
+
 .tags{
     @include buttonTags;
     &:hover{
@@ -68,11 +99,23 @@ main{
     right: 0rem;
     top:-5rem;
     bottom: 0rem;
+    min-width: 22rem;
+    @include mobile-only{
+        font-size: 1rem;
+        position: absolute;
+        left: 13rem;
+        top: -8rem;   
+    }
+
 }
 #navRetourPhotographers{
     width: 30rem;
     position:fixed;
     left: 35rem;
+    top: 2rem;
+    @include mobile-only{
+        display: none;  
+    }
 }
 #btnRetourPhotographers{
     padding: 1rem;
@@ -94,6 +137,11 @@ main{
     margin: 5rem 0 0 0 ;
     width: 30%;
     text-align: center;
+    min-width: 25rem;
+    @include mobile-only{
+        margin-top: 3rem;    
+    }
+    
 }
 
 .imgId{
@@ -110,20 +158,6 @@ main{
     color: $clrPrimaire;
 
 }
-.quotePhotographer{
-
-}
 .pricePhotographer{
     color: #757575
-}
-
-.bleu{
-    width: 100px;
-    height: 100px;
-    background: blue;
-}
-.rouge{
-    width: 100px;
-    height: 100px;
-    background: red;
 }

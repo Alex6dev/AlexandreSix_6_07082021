@@ -1,0 +1,11 @@
+{
+  "name": "photographepages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pagesperso.js",
+  "scripts": {
+    "sass": "sass --watch ./pagesperso.scss:./pagesstyle.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

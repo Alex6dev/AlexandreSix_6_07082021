@@ -6,14 +6,28 @@ function enTete(){
             <a href="index.html" id="lienRetour"><img src="./média/logo.png" alt="logo Fish Eye" id="logo"></a>
             <nav id="navigationTags">
                 <ul id="liste">
-                    <li >
+                    <li class="btn">
                         <button class="tags Btnportrait ">#Portrait</button>
+                    </li >
+                    <li class="btn">
                         <button class="tags Btnart">#Art</button>
+                    </li >    
+                    <li class="btn">
                         <button class="tags Btnfashion">#Fashion</button>
+                    </li >
+                    <li class="btn">
                         <button class="tags Btnarchitecture">#Architecture</button>
+                    </li >
+                    <li class="btn">
                         <button class="tags Btntravel">#Travel</button>
+                    </li >
+                    <li class="btn">    
                         <button class="tags Btnsports">#Sports</button>
+                    </li >    
+                    <li class="btn">
                         <button class="tags Btnanimals">#Animals</button>
+                    </li >    
+                    <li class="btn">
                         <button class="tags Btnevents">#Events</button>
                     </li>
                 </ul> 
@@ -31,7 +45,7 @@ function main(){
     const element = document.createElement("main");
     element.innerHTML = `
     <h1 id="titreNosPhotographes">Nos photographes</h1>
-    <nav id="navRetourPhotographers"><a href="#boxVignette" id="btnRetourPhotographers">Retour aux Photographes</a></nav>
+    <nav id="navRetourPhotographers"><a href="#boxVignette" id="btnRetourPhotographers">Retour au debut de la liste</a></nav>
     <article id="boxVignette"></article>
     `;
     document
@@ -50,7 +64,7 @@ function displayPhotographerVignette(photographer) {
     element.setAttribute("class","boxArtiste");
     element.classList.add(newName);
     element.innerHTML = ` 
-        <a href=./ >
+        <a href="./photographepages/photographepages.html?id=${photographer.id}" >
             <img class="imgId" src="./média/PhotographersIdPhotos/${photographer.portrait}" />
             <h2 class="namePhotographer">${photographer.name}</h2>
         </a>
@@ -68,6 +82,22 @@ function displayPhotographerTags(elementt){
     element.classList.add("Btn"+elementt)
     element.textContent=` #${elementt} ` 
     return element;
+}
+/*------------------------------fonction bouton tags------------------------------------------------ */
+function buttontags(nom){
+    let elt=document.getElementsByClassName("boxArtiste");
+    for(var i=0; i<elt.length;i+=1){
+        elt[i].style.display="none";
+    }
+    let eltt=document.getElementsByClassName(nom);
+    for(var i=0; i<eltt.length;i+=1){
+        eltt[i].style.display="block";
+    }
+}
+function EventListener(elt, tags){
+    for(var i=0; i<elt.length; i++){
+        elt[i].addEventListener('click',()=>buttontags(tags));
+    }
 }
 function createvignette(){
     let listPhotographers=[];
@@ -98,7 +128,23 @@ function createvignette(){
                         .appendChild(displayPhotographerTags(elementt));
                 })
             })
+            let portraitBtn= document.getElementsByClassName("Btnportrait");
+            let artBtn= document.getElementsByClassName("Btnart");
+            let fashionBtn= document.getElementsByClassName("Btnfashion");
+            let architectureBtn= document.getElementsByClassName("Btnarchitecture");
+            let travelBtn= document.getElementsByClassName("Btntravel");
+            let sportsBtn= document.getElementsByClassName("Btnsports");
+            let animalsBtn= document.getElementsByClassName("Btnanimals");
+            let eventsBtn= document.getElementsByClassName("Btnevents");
 
+            EventListener(portraitBtn,"portrait");
+            EventListener(artBtn,"art");
+            EventListener(fashionBtn,"fashion");
+            EventListener(architectureBtn,"architecture");
+            EventListener(travelBtn,"travel");
+            EventListener(sportsBtn,"sports");
+            EventListener(animalsBtn,"animals");
+            EventListener(eventsBtn,"events");
         })
         .catch(function (err) {
           console.error(err)
@@ -106,40 +152,9 @@ function createvignette(){
 }
 createvignette()
 
-/*------------------------------fonction bouton tags------------------------------------------------ */
-function buttontags(nom){
-    let elt=document.getElementsByClassName("boxArtiste");
-    for(var i=0; i<elt.length;i+=1){
-        elt[i].style.display="none";
-    }
-    let eltt=document.getElementsByClassName(nom);
-    for(var i=0; i<eltt.length;i+=1){
-        eltt[i].style.display="block";
-    }
-}
-function EventListener(elt, tags){
-    for(var i=0; i<elt.length; i++){
-        elt[i].addEventListener('click',()=>buttontags(tags));
-    }
-}
 
-let portraitBtn= document.getElementsByClassName("Btnportrait");
-let artBtn= document.getElementsByClassName("Btnart");
-let fashionBtn= document.getElementsByClassName("Btnfashion");
-let architectureBtn= document.getElementsByClassName("Btnarchitecture");
-let travelBtn= document.getElementsByClassName("Btntravel");
-let sportsBtn= document.getElementsByClassName("Btnsports");
-let animalsBtn= document.getElementsByClassName("Btnanimals");
-let eventsBtn= document.getElementsByClassName("Btnevents");
 
-EventListener(portraitBtn,"portrait");
-EventListener(artBtn,"art");
-EventListener(fashionBtn,"fashion");
-EventListener(architectureBtn,"architecture");
-EventListener(travelBtn,"travel");
-EventListener(sportsBtn,"sports");
-EventListener(animalsBtn,"animals");
-EventListener(eventsBtn,"events");
+
 
 
 

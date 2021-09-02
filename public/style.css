@@ -16,24 +16,60 @@ p {
   margin: 4rem 0 0 0;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  width: 74%;
+}
+@media screen and (max-width: 599px) {
+  #boxHeader {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+a {
+  font-family: "DM Sans";
+  text-decoration: none;
 }
 
 #lienRetour {
   width: 20%;
+}
+@media screen and (max-width: 599px) {
+  #lienRetour {
+    width: 50%;
+  }
 }
 
 #logo {
   width: 100%;
 }
 
-::marker {
-  color: white;
+#navigationTags {
+  min-width: 20%;
+  margin-left: 6rem;
+}
+@media screen and (max-width: 599px) {
+  #navigationTags {
+    min-width: 70%;
+    margin-left: 0;
+  }
 }
 
 #liste {
+  list-style-type: none;
   width: 40rem;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 599px) {
+  #liste {
+    width: 100%;
+  }
+}
+
+.btn {
+  margin: 3px;
 }
 
 .tags {
@@ -64,12 +100,27 @@ main {
   right: 0rem;
   top: -5rem;
   bottom: 0rem;
+  min-width: 22rem;
+}
+@media screen and (max-width: 599px) {
+  #titreNosPhotographes {
+    font-size: 1rem;
+    position: absolute;
+    left: 13rem;
+    top: -8rem;
+  }
 }
 
 #navRetourPhotographers {
   width: 30rem;
   position: fixed;
   left: 35rem;
+  top: 2rem;
+}
+@media screen and (max-width: 599px) {
+  #navRetourPhotographers {
+    display: none;
+  }
 }
 
 #btnRetourPhotographers {
@@ -94,6 +145,12 @@ main {
   margin: 5rem 0 0 0;
   width: 30%;
   text-align: center;
+  min-width: 25rem;
+}
+@media screen and (max-width: 599px) {
+  .boxArtiste {
+    margin-top: 3rem;
+  }
 }
 
 .imgId {
@@ -114,18 +171,6 @@ main {
 
 .pricePhotographer {
   color: #757575;
-}
-
-.bleu {
-  width: 100px;
-  height: 100px;
-  background: blue;
-}
-
-.rouge {
-  width: 100px;
-  height: 100px;
-  background: red;
 }
 
 /*# sourceMappingURL=style.css.map */
