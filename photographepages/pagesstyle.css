@@ -9,9 +9,15 @@
 body {
   padding: 2rem;
 }
+@media screen and (max-width: 599px) {
+  body {
+    padding: 1rem;
+  }
+}
 
 a, li, p, button, label, input {
   font-family: "DM sans";
+  font-size: 1.2rem;
 }
 
 ul {
@@ -23,14 +29,18 @@ h1 {
   margin: 0;
 }
 
-figcaption {
-  color: #901C1C;
+p {
   font-family: "DM sans";
-  margin: 0.5rem;
+  font-size: 1.5rem;
 }
 
 #logo {
   width: 20%;
+}
+@media screen and (max-width: 599px) {
+  #logo {
+    width: 50%;
+  }
 }
 
 #vignettePhotographer {
@@ -38,6 +48,14 @@ figcaption {
   padding: 3rem 2rem 3rem 2rem;
   border-radius: 1rem;
   position: relative;
+}
+@media screen and (max-width: 599px) {
+  #vignettePhotographer {
+    margin-top: 1rem;
+    background-color: white;
+    padding: 0;
+    width: 100%;
+  }
 }
 
 #boxPhotographer {
@@ -50,17 +68,43 @@ figcaption {
 #box {
   width: 35%;
 }
+@media screen and (max-width: 599px) {
+  #box {
+    width: 100%;
+  }
+}
 
 .namePhotographer {
+  font-size: 3rem;
   color: #D3573C;
+}
+@media screen and (max-width: 599px) {
+  .namePhotographer {
+    width: 65%;
+    font-size: 2.5rem;
+  }
 }
 
 .cityPhotographer {
   color: #901C1C;
 }
+@media screen and (max-width: 599px) {
+  .cityPhotographer {
+    font-size: 1.2rem;
+    width: 65%;
+  }
+}
 
 .quotePhotographer {
   color: #919191;
+  font-size: 1.2rem;
+}
+
+#tagsPhotographer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .tags {
@@ -79,15 +123,49 @@ figcaption {
   background: #D3573C;
   color: white;
 }
+@media screen and (max-width: 599px) {
+  .tags {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
 
 #btnContactezMoi {
-  width: 8rem;
-  height: 3rem;
+  width: 10.5rem;
+  height: 3.5rem;
   color: #E5E5E5;
   background-color: #901C1C;
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
+}
+#btnContactezMoi:hover {
+  background-color: #D3573C;
+  color: black;
+}
+@media screen and (max-width: 599px) {
+  #btnContactezMoi {
+    position: fixed;
+    top: 90%;
+    left: 25%;
+  }
+}
+
+.imgId {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 10rem;
+  margin-left: 40%;
+  box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.493);
+}
+@media screen and (max-width: 599px) {
+  .imgId {
+    position: absolute;
+    right: 0;
+    height: 7rem;
+    width: 7rem;
+  }
 }
 
 #bground {
@@ -99,7 +177,7 @@ figcaption {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(158, 158, 161, 0.4);
+  background-color: white;
 }
 
 #boxForm {
@@ -113,18 +191,38 @@ figcaption {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 599px) {
+  #boxForm {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
 
 #titreForm {
   width: 85%;
   font-size: 3.5rem;
 }
+@media screen and (max-width: 599px) {
+  #titreForm {
+    width: 70%;
+    font-size: 2rem;
+  }
+}
 
 #closeForm {
+  background-color: #D3573C;
+  border: none;
   color: white;
   font-size: 4rem;
   position: absolute;
   left: 85%;
   cursor: pointer;
+}
+@media screen and (max-width: 599px) {
+  #closeForm {
+    left: 70%;
+  }
 }
 
 #form {
@@ -136,6 +234,11 @@ label {
   color: #333333;
   font-size: 1.5rem;
 }
+@media screen and (max-width: 599px) {
+  label {
+    margin-top: 1.5rem;
+  }
+}
 
 input {
   width: 100%;
@@ -143,12 +246,24 @@ input {
   border: none;
   border-radius: 0.2rem;
 }
+@media screen and (max-width: 599px) {
+  input {
+    width: 85%;
+    height: 3rem;
+  }
+}
 
 textarea {
   width: 100%;
   height: 6rem;
   border: none;
   border-radius: 0.2rem;
+}
+@media screen and (max-width: 599px) {
+  textarea {
+    width: 85%;
+    height: 10rem;
+  }
 }
 
 #btnSubmit {
@@ -159,23 +274,30 @@ textarea {
   background-color: #901C1C;
   cursor: pointer;
 }
-
-.imgId {
-  width: 10rem;
-  height: 10rem;
-  object-fit: cover;
-  border-radius: 7rem;
-  margin-left: 40%;
+@media screen and (max-width: 599px) {
+  #btnSubmit {
+    margin-left: 20%;
+  }
 }
 
 .pricePhotographer {
   display: flex;
   flex-direction: row;
-  padding: 1rem 1rem 0.4rem 1rem;
+  width: 20%;
+  padding: 1rem 1rem 0.4rem 2rem;
   background-color: #D3573C;
   position: fixed;
-  left: 70rem;
+  left: 60%;
   bottom: 0;
+}
+@media screen and (max-width: 599px) {
+  .pricePhotographer {
+    display: none;
+  }
+}
+
+#nbrLikes {
+  width: 4rem;
 }
 
 #textStatique {
@@ -185,6 +307,20 @@ textarea {
 .fa-heart {
   padding-right: 2rem;
   cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.pricePhotographer .fa-heart {
+  cursor: default;
+  padding: 0.7rem;
+}
+
+.pricePhotographer p {
+  margin: 0.5rem;
+}
+
+#price {
+  margin-left: 40%;
 }
 
 #boxTrier {
@@ -192,12 +328,18 @@ textarea {
   flex-direction: row;
   position: relative;
 }
+@media screen and (max-width: 599px) {
+  #boxTrier {
+    display: none;
+  }
+}
 
 #menuDeroulant {
   position: absolute;
-  left: 3rem;
-  width: 8.5rem;
-  height: 2.5rem;
+  left: 3.5rem;
+  top: 1.5rem;
+  width: 11rem;
+  height: 3rem;
   padding-left: 0.5rem;
   margin-left: 3rem;
   background-color: #901C1C;
@@ -206,7 +348,7 @@ textarea {
 .menuDeroulantBouton {
   text-align: left;
   height: 2.5rem;
-  width: 8rem;
+  width: 10rem;
   color: white;
   background-color: #901C1C;
   border: none;
@@ -221,25 +363,28 @@ textarea {
 #chevron {
   color: white;
   position: absolute;
-  left: 13rem;
-  top: 1.8rem;
+  left: 15rem;
+  top: 2.25rem;
   transform: rotate(180deg);
   cursor: pointer;
 }
 
 #btnPopu {
+  left: 0.5rem;
   position: absolute;
   top: -1px;
 }
 
 #btnDate {
   position: absolute;
+  left: 0.5rem;
   top: 2.5rem;
   display: none;
 }
 
 #btnTitre {
   position: absolute;
+  left: 0.5rem;
   top: 5rem;
   display: none;
 }
@@ -255,6 +400,11 @@ textarea {
   width: 27%;
   margin: 1rem;
 }
+@media screen and (max-width: 599px) {
+  .boxMedia {
+    width: 100%;
+  }
+}
 
 .vignetteMedia {
   width: 100%;
@@ -262,10 +412,38 @@ textarea {
   object-fit: cover;
 }
 
+figcaption {
+  color: #901C1C;
+  font-family: "DM sans";
+  margin: 0.5rem;
+  font-size: 2rem;
+}
+@media screen and (max-width: 599px) {
+  figcaption {
+    font-size: 1.5rem;
+  }
+}
+
 .boxlegend {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.boxlike {
+  display: flex;
+  flex-direction: row;
+}
+
+.heartMedia {
+  color: #901C1C;
+  background-color: white;
+  border: none;
+}
+@media screen and (max-width: 599px) {
+  .heartMedia {
+    padding-right: 0;
+  }
 }
 
 .mediaCoeur {
@@ -276,8 +454,7 @@ textarea {
 .lightbox {
   width: 100%;
   height: 100%;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: white;
   position: fixed;
   top: 0;
   left: 0;
@@ -290,30 +467,39 @@ textarea {
 }
 
 #closeLightbox {
-  color: white;
+  color: #901C1C;
   font-size: 4rem;
   position: fixed;
   top: 5%;
   right: 5%;
-  opacity: 0.5;
-  transition: opacity 0.3s;
+  z-index: 2;
+  background-color: white;
+  border: white;
 }
 #closeLightbox:hover {
   cursor: pointer;
-  opacity: 1;
+}
+@media screen and (max-width: 599px) {
+  #closeLightbox {
+    font-size: 2rem;
+  }
 }
 
 #next, #prev {
-  color: white;
+  color: #901C1C;
   font-size: 4rem;
   position: fixed;
   top: 50%;
-  opacity: 0.5;
-  transition: opacity 0.3s;
+  background-color: white;
+  border: white;
 }
 #next:hover, #prev:hover {
-  opacity: 1;
   cursor: pointer;
+}
+@media screen and (max-width: 599px) {
+  #next, #prev {
+    font-size: 2rem;
+  }
 }
 
 #next {
@@ -327,17 +513,36 @@ textarea {
 }
 
 #container {
-  margin: 0 50px 0 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  margin: 0;
+  width: 80%;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  height: 100%;
 }
 
 #photo {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 80%;
+  max-height: 100vh;
   object-fit: cover;
+}
+@media screen and (max-width: 599px) {
+  #photo {
+    width: 95%;
+    height: 30%;
+    margin: 70% 0 0 2%;
+  }
+}
+
+.legendLightbox {
+  color: #901C1C;
+  font-size: 2rem;
+}
+@media screen and (max-width: 599px) {
+  .legendLightbox {
+    font-size: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=pagesstyle.css.map */

@@ -61,6 +61,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  z-index: 10;
 }
 @media screen and (max-width: 599px) {
   #liste {
@@ -96,15 +97,17 @@ main {
   color: #901C1C;
   margin: 0;
   position: absolute;
-  left: 60rem;
+  left: 72%;
   right: 0rem;
   top: -5rem;
   bottom: 0rem;
-  min-width: 22rem;
+  z-index: -2;
 }
 @media screen and (max-width: 599px) {
   #titreNosPhotographes {
     font-size: 1rem;
+    width: 10rem;
+    height: 3rem;
     position: absolute;
     left: 13rem;
     top: -8rem;
@@ -114,7 +117,7 @@ main {
 #navRetourPhotographers {
   width: 30rem;
   position: fixed;
-  left: 35rem;
+  left: 45%;
   top: 2rem;
 }
 @media screen and (max-width: 599px) {
@@ -124,13 +127,17 @@ main {
 }
 
 #btnRetourPhotographers {
+  color: white;
+  background-color: #901C1C;
   padding: 1rem;
   font-family: "DM sans";
-  color: #901C1C;
-  background: white;
   border: 0.5px solid #C4C4C4;
   border-radius: 2rem;
   text-decoration: none;
+}
+#btnRetourPhotographers:hover {
+  color: black;
+  background-color: #D3573C;
 }
 
 #boxVignette {

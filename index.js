@@ -3,11 +3,11 @@ function enTete(){
     const element = document.createElement("header");
     element.innerHTML = `
         <div id="boxHeader">
-            <a href="index.html" id="lienRetour"><img src="./média/logo.png" alt="logo Fish Eye" id="logo"></a>
-            <nav id="navigationTags">
+            <a href="index.html" id="lienRetour"><img src="./média/logo.png" alt="logo Fish Eye" id="logo" aria-label="lien retour accueil" aria-current="page" ></a>
+            <nav id="navigationTags" aria-label="liste bouton filtre">
                 <ul id="liste">
                     <li class="btn">
-                        <button class="tags Btnportrait ">#Portrait</button>
+                        <button class="tags Btnportrait "   >#Portrait</button>
                     </li >
                     <li class="btn">
                         <button class="tags Btnart">#Art</button>
@@ -45,12 +45,12 @@ function main(){
     const element = document.createElement("main");
     element.innerHTML = `
     <h1 id="titreNosPhotographes">Nos photographes</h1>
-    <nav id="navRetourPhotographers"><a href="#boxVignette" id="btnRetourPhotographers">Retour au debut de la liste</a></nav>
+    <nav id="navRetourPhotographers" aria-label="bouton retour debut de liste "><a href="#boxVignette" id="btnRetourPhotographers">Retour au debut de la liste</a></nav>
     <article id="boxVignette"></article>
     `;
     document
         .getElementById('app')
-        .appendChild(element)
+        .appendChild(element) 
 
     
 }
@@ -65,7 +65,7 @@ function displayPhotographerVignette(photographer) {
     element.classList.add(newName);
     element.innerHTML = ` 
         <a href="./photographepages/photographepages.html?id=${photographer.id}" >
-            <img class="imgId" src="./média/PhotographersIdPhotos/${photographer.portrait}" />
+            <img class="imgId" src="./média/PhotographersIdPhotos/${photographer.portrait}" alt="photo du photographe"/>
             <h2 class="namePhotographer">${photographer.name}</h2>
         </a>
         <p class="cityPhotographer">${photographer.city},${photographer.country}</p>
@@ -151,13 +151,3 @@ function createvignette(){
         });
 }
 createvignette()
-
-
-
-
-
-
-
-
-
-

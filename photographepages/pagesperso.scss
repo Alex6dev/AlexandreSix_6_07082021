@@ -12,11 +12,20 @@ $font:"DM Sans";
         transform:rotate(0deg) ;
     }
 }
+@mixin mobile-only {
+    @media screen and (max-width:599px){
+        @content;
+    }
+}
 body{
     padding:2rem;
+    @include mobile-only{
+        padding: 1rem;    
+    }
 }
 a,li,p,button,label,input{
     font-family: "DM sans";
+    font-size: 1.2rem;
 }
 ul{
     list-style-type: none; 
@@ -25,22 +34,30 @@ ul{
 h1{
     font-family: "DM sans";
     margin: 0;
-
 }
-
-figcaption{
-    color: $clrSecondaire;
+p{
     font-family: "DM sans";
-    margin: 0.5rem;
+    font-size: 1.5rem;
 }
+
+
 #logo{
     width: 20%;
+    @include mobile-only{
+         width: 50%;
+    }
 }
 #vignettePhotographer{
     background-color: rgba(172, 172, 172, 0.123);
     padding: 3rem 2rem 3rem 2rem ;
     border-radius: 1rem;
     position: relative;
+    @include mobile-only{
+        margin-top: 1rem;
+        background-color: white;  
+        padding: 0;  
+        width: 100%;
+    }
 }
 
 #boxPhotographer{
@@ -51,15 +68,34 @@ figcaption{
 }
 #box{
     width: 35%;
+    @include mobile-only{
+        width: 100%; 
+    }
 }
 .namePhotographer{
+    font-size: 3rem;
     color: $clrPrimaire;
+    @include mobile-only{
+         width: 65%;
+         font-size: 2.5rem;
+    }
 }
 .cityPhotographer{
     color: $clrSecondaire;
+    @include mobile-only{
+        font-size: 1.2rem; 
+        width: 65%;   
+    }
 }
 .quotePhotographer{
     color: rgb(145, 145, 145);
+    font-size: 1.2rem;
+}
+#tagsPhotographer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .tags{
     font-family: "DM sans";
@@ -76,15 +112,45 @@ figcaption{
         background: $clrPrimaire;
         color: $clrNeutre;
     }
+    @include mobile-only{
+        font-size: 1rem;
+        margin-top: 0.5rem;
+
+    }
 }
 #btnContactezMoi{
-    width: 8rem;
-    height: 3rem;
+    width: 10.5rem;
+    height: 3.5rem;
     color:$clrBackground ;
     background-color: $clrSecondaire;
     border: none;
     border-radius: 0.3rem;
     cursor: pointer;
+    &:hover{
+        background-color: $clrPrimaire;
+        color: black;  
+    }
+    @include mobile-only{
+        position: fixed;
+        top: 90%;
+        left: 25%;
+
+    }
+}
+.imgId{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 10rem;
+    margin-left: 40%;
+    box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.493);
+    @include mobile-only{
+        position: absolute;
+        right: 0;
+        height: 7rem;
+        width:7rem;
+            
+    }
 }
 #bground {
     display: block;
@@ -95,7 +161,8 @@ figcaption{
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(158, 158, 161, 0.4);
+    background-color: white;
+   
 } 
 #boxForm{
     padding: 1.5rem;
@@ -107,18 +174,32 @@ figcaption{
     position: relative;
     display: flex;
     flex-direction: column;
+    @include mobile-only{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
 
 }
 #titreForm{
     width: 85%;
     font-size: 3.5rem;
+    @include mobile-only{
+    width: 70%;
+    font-size: 2rem;   
+    }
 }
 #closeForm{
+    background-color: $clrPrimaire;
+    border: none;
     color: white;
     font-size: 4rem;
     position: absolute;
     left: 85%;
     cursor: pointer;
+    @include mobile-only{
+    left: 70%;   
+    }
 
 }
 #form{
@@ -128,18 +209,29 @@ figcaption{
 label{
     color: rgb(51, 51, 51);
     font-size: 1.5rem;
+    @include mobile-only{
+    margin-top: 1.5rem ;    
+    }
 }
 input{
     width: 100%;
     height: 2rem;
     border: none;
     border-radius: 0.2rem;
+    @include mobile-only{
+    width: 85%;  
+    height: 3rem; 
+    }
 }
 textarea{
     width: 100%;
     height: 6rem;
     border: none;
     border-radius: 0.2rem;
+    @include mobile-only{
+    width: 85%; 
+    height: 10rem;   
+    }
 }
 #btnSubmit{
     width: 10rem;
@@ -148,25 +240,30 @@ textarea{
     color: white;
     background-color: $clrSecondaire; 
     cursor: pointer;
+    @include mobile-only{
+        margin-left: 20%;
+    }
 
 }
-.imgId{
-    width: 10rem;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 7rem;
-    margin-left: 40%;
 
-}
+
+
 
 .pricePhotographer{
     display: flex;
     flex-direction: row;
-    padding: 1rem 1rem 0.4rem 1rem ;
+    width: 20%;
+    padding: 1rem 1rem 0.4rem 2rem ;
     background-color: $clrPrimaire ;
     position: fixed;
-    left: 70rem;
+    left: 60%;
     bottom: 0;
+    @include mobile-only{
+        display: none;    
+    }
+}
+#nbrLikes{
+    width: 4rem; 
 }
 #textStatique{
     margin: 0;
@@ -174,28 +271,41 @@ textarea{
 .fa-heart{
     padding-right: 2rem;
     cursor: pointer;
+    font-size: 1.5rem;
+}
+.pricePhotographer .fa-heart{
+    cursor: default;
+    padding: 0.7rem; 
 
+}
+.pricePhotographer p{
+    margin: 0.5rem;
+}
+#price{
+    margin-left: 40%;
 }
 #boxTrier{
     display: flex;
     flex-direction: row;
     position: relative;
+    @include mobile-only{
+        display: none;            
+    }
 }
 #menuDeroulant{
     position: absolute;
-    left: 3rem;
-    width: 8.5rem;
-    height: 2.5rem;
+    left: 3.5rem;
+    top: 1.5rem;
+    width: 11rem;
+    height: 3rem;
     padding-left: 0.5rem;
     margin-left: 3rem;
     background-color: $clrSecondaire;
 }
 .menuDeroulantBouton{
-    
-    
     text-align: left; 
     height: 2.5rem;
-    width: 8rem;
+    width: 10rem;
     color: white;
     background-color: $clrSecondaire;
     border: none;
@@ -210,24 +320,27 @@ textarea{
 #chevron{
     color: white;
     position: absolute;
-    left: 13rem;
-    top: 1.8rem;
+    left: 15rem;
+    top: 2.25rem;
     transform: rotate(180deg);
     cursor: pointer;
 
 }
 #btnPopu{
+    left: 0.5rem;
     position: absolute;
     top: -1px;
 }
 #btnDate{
     position: absolute;
+    left: 0.5rem;
     top: 2.5rem;
     display: none;
 
 }
 #btnTitre{
     position: absolute;
+    left: 0.5rem;
     top: 5rem;
     display: none;
 }
@@ -240,6 +353,9 @@ textarea{
 .boxMedia{
     width: 27%;
     margin: 1rem;
+    @include mobile-only{
+        width: 100%;     
+    }
 }
 .vignetteMedia{
     width: 100%;
@@ -247,20 +363,42 @@ textarea{
     object-fit: cover;
 
 }
+figcaption{
+    color: $clrSecondaire;
+    font-family: "DM sans";
+    margin: 0.5rem;
+    font-size: 2rem;
+    @include mobile-only{
+        font-size:1.5rem;     
+    }
+}
 .boxlegend{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+.boxlike{
+    display: flex;
+    flex-direction: row;
+}
+.heartMedia{
+    color: $clrSecondaire;
+    background-color: white;
+    border: none;
+
+    @include mobile-only{
+        padding-right: 0;     
+    }
+}
 .mediaCoeur{
     color: $clrSecondaire;
     margin: 0.5rem;
 }
+
 .lightbox{
     width: 100%;
     height: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: white;
     position: fixed;
     top: 0;
     left: 0;
@@ -271,28 +409,33 @@ textarea{
     opacity: 0;
 }
 #closeLightbox{
-    color: white;
+    color: $clrSecondaire;
     font-size: 4rem;
     position: fixed;
     top: 5%;
     right: 5%;
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    z-index: 2;
+    background-color: white;
+    border: white;
     &:hover{
         cursor: pointer;
-        opacity: 1;
+    }
+    @include mobile-only{
+        font-size: 2rem;     
     }
 }
 #next,#prev{
-    color: white;
+    color: $clrSecondaire;
     font-size: 4rem;
     position: fixed;
     top: 50%;
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    background-color: white;
+    border: white;
     &:hover{
-        opacity: 1;
         cursor: pointer;
+    }
+    @include mobile-only{
+        font-size: 2rem;    
     }
 }
 
@@ -305,15 +448,32 @@ textarea{
     left: 3%;
 }
 #container{
-    margin: 0 50px 0 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    margin:0;
+    width: 80%;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    height: 100%;   
+    
 }
 #photo{
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+    
+    width: 100%;
+    height: 80%;
+    max-height: 100vh;
+    object-fit: cover; 
+    @include mobile-only{
+        width: 95%;
+        height: 30%;
+        margin: 70% 0 0 2%;
+    }
 
+}
+
+.legendLightbox{
+    color: $clrSecondaire;
+    font-size: 2rem;
+    @include mobile-only{
+        font-size: 1.5rem;     
+    }
 }
