@@ -8,7 +8,7 @@ Create an accessible website for a platform of Photographers.
 
 
 Home page:
-<img src='https://github.com/Alex6dev/AlexandreSix_6_07082021/blob/master/screens/screenHome.png' alt="screenshot"/>
+<img src='https://github.com/Alex6dev/AlexandreSix_6_07082021/blob/main/screens/screenHome.png' alt="screenshot"/>
 
 Figma: [link to model](https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR-OLD?node-id=0%3A1)
 
